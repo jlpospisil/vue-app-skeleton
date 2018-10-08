@@ -9,8 +9,12 @@
     "test:unit": "vue-cli-service test:unit"
   },
   "dependencies": {
+    "node-sass": "^4.9.3",
+    "sass-loader": "^7.1.0",
     "vue": "^2.5.17",
-    "vuex": "^3.0.1"
+    "vue-router": "^3.0.1",
+    "vuex": "^3.0.1",
+    "vuex-persistedstate": "^2.5.4"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.0.0",
