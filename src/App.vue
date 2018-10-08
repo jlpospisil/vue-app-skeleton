@@ -3,9 +3,20 @@
     <img alt="Vue logo" src="./assets/logo.png">
 
     <div class="mt-2 mb-5">
-      <router-link to="/home" class="btn btn-primary mx-3">Home</router-link>
-      <router-link to="/about" class="btn btn-secondary mx-3">About</router-link>
-      <router-link to="/other" class="btn btn-info mx-3">Other</router-link>
+      <router-link to="/home" class="btn btn-primary mx-3">
+        <i class="fa fa-fw fa-futbol-o"></i>
+        Home
+      </router-link>
+
+      <router-link to="/about" class="btn btn-secondary mx-3">
+        <i class="fa fa-fw fa-empire"></i>
+        About
+      </router-link>
+
+      <router-link to="/other" class="btn btn-info mx-3">
+        <i class="fa fa-fw fa-shekel"></i>
+        Other
+        </router-link>
     </div>
 
     <transition name="fade" mode="out-in">
