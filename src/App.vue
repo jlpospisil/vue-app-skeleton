@@ -2,46 +2,46 @@
   <div>
     <Loading :loading="loading"></Loading>
 
-    <img alt="Vue logo" src="./assets/logo.png">
+    <top-nav></top-nav>
 
-    <div class="mt-2 mb-5">
-      <router-link to="/home" class="btn btn-primary mx-3">
-        <i class="fa fa-fw fa-futbol-o"></i>
-        Home
-      </router-link>
+    <div id="app-content" :class="{'side-nav-open': side_nav.is_open }">
+      <img alt="Vue logo" src="./assets/logo.png">
 
-      <router-link to="/about" class="btn btn-secondary mx-3">
-        <i class="fa fa-fw fa-empire"></i>
-        About
-      </router-link>
-
-      <router-link to="/other" class="btn btn-info mx-3">
-        <i class="fa fa-fw fa-shekel"></i>
-        Other
-        </router-link>
+      <transition name="fade" mode="out-in">
+        <router-view :key="$route.path"></router-view>
+      </transition>
     </div>
-
-    <transition name="fade" mode="out-in">
-      <router-view :key="$route.path"></router-view>
-    </transition>
   </div>
 </template>
 
 <style lang="scss">
   @import './scss/main.scss';
+
+  #app-content {
+    padding-top: $top-nav-height;
+    padding-left: $side-nav-width-collapsed;
+  }
+  @include media-breakpoint-up(sm) {
+    #app-content {
+      &.side-nav-open {
+        padding-left: $side-nav-width-expanded;
+      }
+    }
+  }
 </style>
 
 <script>
 import {mapState, mapActions} from 'vuex';
-import Loading from './components/ui/Loading.vue';
+import { Loading, TopNav } from './components/ui';
 
 export default {
   name: 'app',
   components: {
     Loading,
+    TopNav,
   },
   computed: {
-    ...mapState('ui', ['loading']),
+    ...mapState('ui', ['loading', 'side_nav']),
   },
   watch: {  // TODO: this is only here to demo toastr alerts and loading spinner
     $route() {

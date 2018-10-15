@@ -2,6 +2,8 @@ import Vue from 'vue';
 import router from './router';
 import store from './vuex';
 import Notifications from './plugins/toastr-notifications';
+import Popper from 'popper.js';
+import Bootstrap from 'bootstrap';
 
 Vue.config.productionTip = false;
 

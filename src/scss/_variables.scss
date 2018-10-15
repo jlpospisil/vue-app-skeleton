@@ -12,6 +12,7 @@ $theme-colors: (
 );
 
 // User interface
+$top-nav-height: 56px;
 $side-nav-width-collapsed: 0px;
 $side-nav-width-expanded: 0px;
 $loading-overlay-bg-color: rgba(map-get($theme-colors, secondary), 0.2);
