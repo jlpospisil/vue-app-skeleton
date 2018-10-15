@@ -4,7 +4,7 @@
 
     <top-nav></top-nav>
 
-    <div id="app-content" :class="{'side-nav-open': side_nav.is_open }">
+    <div id="app-content" class="text-center" :class="{'side-nav-open': side_nav.is_open }">
       <img alt="Vue logo" src="./assets/logo.png">
 
       <transition name="fade" mode="out-in">

@@ -12,24 +12,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item">
-                    <router-link to="/home" class="nav-link">
-                        <icon name="fa-home"></icon>
-                        Home
-                    </router-link>
-                </li>
-
-                <li class="nav-item">
-                    <router-link to="/about" class="nav-link">
-                        <icon name="fa-info"></icon>
-                        About
-                    </router-link>
-                </li>
-
-                <li class="nav-item">
-                    <router-link to="/other" class="nav-link">
-                        <icon name="fa-motorcycle"></icon>
-                        Other
+                <li class="nav-item" v-for="link in links.main" :key="link.to">
+                    <router-link class="nav-link" :to="link.to">
+                        <icon :name="link.icon" v-if="link.icon"></icon>
+                        {{ link.label }}
                     </router-link>
                 </li>
             </ul>
@@ -71,6 +57,17 @@
   export default {
     components: {
       Icon,
+    },
+    data () {
+      return {
+        links: {
+          main: [
+            { label: 'Home', to: '/home', icon: 'fa-home' },
+            { label: 'About', to: '/about', icon: 'fa-info' },
+            { label: 'Other', to: '/other', icon: 'fa-motorcycle' },
+          ]
+        }
+      }
     }
   }
 </script>
