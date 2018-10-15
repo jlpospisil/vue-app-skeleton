@@ -43,7 +43,7 @@ export default {
   computed: {
     ...mapState('ui', ['loading']),
   },
-  watch: {  // TODO: this is only here to demo toastr alerts
+  watch: {  // TODO: this is only here to demo toastr alerts and loading spinner
     $route() {
       const types = ['warning', 'info', 'success', 'error'];
       const type = types[Math.floor(Math.random() * types.length)];
