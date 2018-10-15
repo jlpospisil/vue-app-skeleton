@@ -10,3 +10,8 @@ $theme-colors: (
   "warning": #ffc107,
   "info": #17a2b8
 );
+
+// User interface
+$side-nav-width-collapsed: 0px;
+$side-nav-width-expanded: 0px;
+$loading-overlay-bg-color: rgba(map-get($theme-colors, secondary), 0.2);

@@ -1,5 +1,7 @@
 <template>
-  <div id="app">
+  <div>
+    <Loading :loading="loading"></Loading>
+
     <img alt="Vue logo" src="./assets/logo.png">
 
     <div class="mt-2 mb-5">
@@ -30,15 +32,33 @@
 </style>
 
 <script>
+import {mapState, mapActions} from 'vuex';
+import Loading from './components/ui/Loading.vue';
+
 export default {
   name: 'app',
-  watch: {
+  components: {
+    Loading,
+  },
+  computed: {
+    ...mapState('ui', ['loading']),
+  },
+  watch: {  // TODO: this is only here to demo toastr alerts
     $route() {
       const types = ['warning', 'info', 'success', 'error'];
       const type = types[Math.floor(Math.random() * types.length)];
       const { path } = this.$route;
-      this.$toast[type](`Route changed to ${path}`, `Example ${type} alert`);
+      const { disableLoading, enableLoading } = this;
+
+      enableLoading();
+      setTimeout(() => {
+        disableLoading();
+        this.$toast[type](`Route changed to ${path}`, `Example ${type} alert`);
+      }, 1500);
     },
+  },
+  methods: {
+    ...mapActions('ui', ['disableLoading', 'enableLoading']),
   },
 };
 </script>
