@@ -34,7 +34,7 @@
 </style>
 
 <script>
-import {mapState, mapActions} from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import { Loading, SideNav, TopNav } from './components/ui';
 
 export default {
@@ -47,7 +47,7 @@ export default {
   computed: {
     ...mapState('ui', ['loading', 'side_nav']),
   },
-  watch: {  // TODO: this is only here to demo toastr alerts and loading spinner
+  watch: { // TODO: this is only here to demo toastr alerts and loading spinner
     $route() {
       const types = ['warning', 'info', 'success', 'error'];
       const type = types[Math.floor(Math.random() * types.length)];

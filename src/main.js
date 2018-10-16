@@ -1,9 +1,11 @@
 import Vue from 'vue';
+/* eslint-disable-next-line no-unused-vars */
+import Popper from 'popper.js';
+/* eslint-disable-next-line no-unused-vars */
+import Bootstrap from 'bootstrap';
 import router from './router';
 import store from './vuex';
 import Notifications from './plugins/toastr-notifications';
-import Popper from 'popper.js';
-import Bootstrap from 'bootstrap';
 
 Vue.config.productionTip = false;
 

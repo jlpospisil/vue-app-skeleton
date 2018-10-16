@@ -17,27 +17,27 @@
 </template>
 
 <script>
-  export default {
-    props: {
-      size: {
-        default: '40px'
-      }
+export default {
+  props: {
+    size: {
+      default: '40px',
     },
-    computed: {
-      innerStyles () {
-        let size = parseInt(this.size)
-        return {
-          transform: 'scale(' + (size / 164) + ')'
-        }
-      },
-      styles () {
-        return {
-          width: this.size,
-          height: this.size
-        }
-      }
-    }
-  }
+  },
+  computed: {
+    innerStyles() {
+      const size = parseInt(this.size, 10);
+      return {
+        transform: `scale(${size / 164})`,
+      };
+    },
+    styles() {
+      return {
+        width: this.size,
+        height: this.size,
+      };
+    },
+  },
+};
 </script>
 
 <style lang="scss" scoped>

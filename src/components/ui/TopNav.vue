@@ -14,15 +14,25 @@
             <strong>Nav Brand</strong>
         </router-link>
 
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+        <button class="navbar-toggler"
+                type="button"
+                data-toggle="collapse"
+                data-target="#navbarCollapse"
+                aria-controls="navbarCollapse"
+                aria-expanded="false"
+                aria-label="Toggle navigation"
+        >
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse pl-md-5" id="navbarCollapse">
+        <div class="collapse navbar-collapse pl-sm-3 pl-md-5" id="navbarCollapse">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" v-for="link in links.main" :key="link.to">
-                    <router-link class="nav-link" :class="{ active: link.to === $route.path }" :to="link.to">
+                    <router-link class="nav-link"
+                        :class="{ active: link.to === $route.path }"
+                        :to="link.to"
+                    >
                         <icon :name="link.icon" v-if="link.icon"></icon>
                         {{ link.label }}
                     </router-link>
@@ -32,13 +42,21 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
-                    <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a id="navbarDropdown"
+                       class="nav-link dropdown-toggle text-white"
+                       href="#" role="button"
+                       data-toggle="dropdown"
+                       aria-haspopup="true"
+                       aria-expanded="false"
+                    >
                         <icon name="fa-user-circle" />
                         User Name
                         <span class="caret"></span>
                     </a>
 
-                    <div class="dropdown-menu dropdown-menu-right bg-primary" aria-labelledby="navbarDropdown">
+                    <div class="dropdown-menu dropdown-menu-right bg-primary"
+                         aria-labelledby="navbarDropdown"
+                    >
                         <router-link to="/" class="dropdown-item text-white">
                             <icon name="fa-cog" class="mr-2" />
                             Settings
@@ -71,29 +89,29 @@
 </style>
 
 <script>
-  import { mapState, mapActions } from 'vuex';
-  import { Icon } from '../generic';
+import { mapState, mapActions } from 'vuex';
+import { Icon } from '../generic';
 
-  export default {
-    components: {
-      Icon,
-    },
-    data () {
-      return {
-        links: {
-          main: [
-            { label: 'Home', to: '/home', icon: 'fa-home' },
-            { label: 'About', to: '/about', icon: 'fa-info' },
-            { label: 'Other', to: '/other', icon: 'fa-motorcycle' },
-          ]
-        }
-      }
-    },
-    computed: {
-      ...mapState('ui', ['side_nav']),
-    },
-    methods: {
-      ...mapActions('ui', ['toggleSideNav']),
-    }
-  }
+export default {
+  components: {
+    Icon,
+  },
+  data() {
+    return {
+      links: {
+        main: [
+          { label: 'Home', to: '/home', icon: 'fa-home' },
+          { label: 'About', to: '/about', icon: 'fa-info' },
+          { label: 'Other', to: '/other', icon: 'fa-motorcycle' },
+        ],
+      },
+    };
+  },
+  computed: {
+    ...mapState('ui', ['side_nav']),
+  },
+  methods: {
+    ...mapActions('ui', ['toggleSideNav']),
+  },
+};
 </script>

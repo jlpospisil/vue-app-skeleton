@@ -35,18 +35,18 @@
 </style>
 
 <script>
-  import { mapState } from 'vuex';
-  import LoadingSpinner from './LoadingSpinner';
+import { mapState } from 'vuex';
+import LoadingSpinner from './LoadingSpinner.vue';
 
-  export default {
-    components: {
-      LoadingSpinner
-    },
-    props: {
-      loading: { type: Boolean, default: false }
-    },
-    computed: {
-      ...mapState('ui', ['side_nav'])
-    },
-  }
+export default {
+  components: {
+    LoadingSpinner,
+  },
+  props: {
+    loading: { type: Boolean, default: false },
+  },
+  computed: {
+    ...mapState('ui', ['side_nav']),
+  },
+};
 </script>
