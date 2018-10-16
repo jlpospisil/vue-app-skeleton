@@ -13,7 +13,7 @@
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" v-for="link in links.main" :key="link.to">
-                    <router-link class="nav-link" :to="link.to">
+                    <router-link class="nav-link" :class="{ active: link.to === $route.path }" :to="link.to">
                         <icon :name="link.icon" v-if="link.icon"></icon>
                         {{ link.label }}
                     </router-link>
