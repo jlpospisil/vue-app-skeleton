@@ -18,7 +18,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
 
-        <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="collapse navbar-collapse pl-md-5" id="navbarCollapse">
             <!-- Left Side Of Navbar -->
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item" v-for="link in links.main" :key="link.to">
@@ -33,6 +33,7 @@
             <ul class="navbar-nav">
                 <li class="nav-item dropdown">
                     <a id="navbarDropdown" class="nav-link dropdown-toggle text-white" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <icon name="fa-user-circle" />
                         User Name
                         <span class="caret"></span>
                     </a>
