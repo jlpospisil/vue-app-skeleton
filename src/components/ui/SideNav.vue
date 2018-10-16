@@ -87,8 +87,11 @@
                 .nav-link {
                     &.nav-link-dropdown-toggle {
                         &:after {
-                            float: right;
+                            position: absolute;
+                            right: 1rem;
                             font-family: 'FontAwesome';
+                            animation-name: fade-in;
+                            animation-duration: $side-nav-animation-duration;
                         }
 
                         &.collapsed:after {
@@ -109,6 +112,8 @@
 
         &:not(.open) {
             .nav-item {
+                width: $side-nav-width-collapsed;
+
                 .nav-link {
                     &[aria-expanded="true"] {
                         border-top-color: $border-color;
@@ -152,6 +157,10 @@
         }
 
         .nav-item {
+            transition: width $side-nav-animation-duration ease-in-out;
+            white-space: nowrap;
+            overflow-x: hidden;
+
             .nav-link {
                 color: $side-nav-font-color;
                 border-top: 1px solid transparent;

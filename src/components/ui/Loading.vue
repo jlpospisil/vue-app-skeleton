@@ -22,6 +22,7 @@
         align-items: center;
         justify-content: center;
         padding-left: $side-nav-width-collapsed;
+        transition: padding $side-nav-animation-duration ease-in-out;
     }
 
     @include media-breakpoint-up(sm) {

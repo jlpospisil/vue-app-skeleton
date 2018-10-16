@@ -1,7 +1,7 @@
 // Fontawesome font path
 $fa-font-path: "~font-awesome/fonts";
 
-// Customize bootstrap
+// Customize bootstrap (defaults included)
 $theme-colors: (
   "primary": #007bff,
   "secondary": #6c757d,
@@ -20,4 +20,11 @@ $side-nav-width-expanded: 250px;
 $side-nav-width-collapsed: 50px;
 $side-nav-bg-color: $primary-dark;
 $side-nav-font-color: #868e96;
+$side-nav-animation-duration: 0.75s;
 $loading-overlay-bg-color: rgba(map-get($theme-colors, secondary), 0.2);
+
+// Animations
+@keyframes fade-in {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}

@@ -22,6 +22,7 @@
   #app-content {
     padding-top: $top-nav-height;
     padding-left: $side-nav-width-collapsed;
+    transition: padding $side-nav-animation-duration ease-in-out;
   }
   @include media-breakpoint-up(sm) {
     #app-content {
