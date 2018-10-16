@@ -12,8 +12,12 @@ html, body {
   .dropdown-menu.bg-primary {
     .dropdown-item {
       &:hover, &:focus {
-        background-color: darken(map-get($theme-colors, primary), 10%);
+        background-color: $primary-dark;
       }
     }
+  }
+
+  .bg-primary-dark {
+    background-color: $primary-dark;
   }
 }

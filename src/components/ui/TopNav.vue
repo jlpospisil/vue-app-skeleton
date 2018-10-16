@@ -55,7 +55,7 @@
     </nav>
 </template>
 
-<style lang="scss">
+<style lang="scss" scoped>
     #side-nav-toggle {
         transition: 0.9s;
 

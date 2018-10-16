@@ -4,6 +4,8 @@
 
     <top-nav></top-nav>
 
+    <side-nav></side-nav>
+
     <div id="app-content" class="text-center" :class="{'side-nav-open': side_nav.is_open }">
       <img alt="Vue logo" src="./assets/logo.png">
 
@@ -32,12 +34,13 @@
 
 <script>
 import {mapState, mapActions} from 'vuex';
-import { Loading, TopNav } from './components/ui';
+import { Loading, SideNav, TopNav } from './components/ui';
 
 export default {
   name: 'app',
   components: {
     Loading,
+    SideNav,
     TopNav,
   },
   computed: {

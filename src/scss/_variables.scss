@@ -11,8 +11,13 @@ $theme-colors: (
   "info": #17a2b8
 );
 
+// Colors
+$primary-dark: darken(map-get($theme-colors, primary), 10%);
+
 // User interface
 $top-nav-height: 56px;
-$side-nav-width-collapsed: 0px;
-$side-nav-width-expanded: 0px;
+$side-nav-width-expanded: 250px;
+$side-nav-width-collapsed: 50px;
+$side-nav-bg-color: $primary-dark;
+$side-nav-font-color: #868e96;
 $loading-overlay-bg-color: rgba(map-get($theme-colors, secondary), 0.2);
