@@ -22,7 +22,7 @@ const reducer = (state) => {
 export default new Vuex.Store({
   plugins: [
     createPersistedState({
-      key: 'myLab',
+      key: 'appName',
       reducer,
     }),
   ],

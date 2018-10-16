@@ -1,6 +1,15 @@
 <template>
     <nav id="app-nav" class="navbar navbar-expand-sm fixed-top navbar-dark bg-primary">
         <!--<div class="container">-->
+        <span id="side-nav-toggle"
+              class="mr-2 text-white"
+              :class="{ 'menu-open': side_nav.is_open, 'menu-closed': !side_nav.is_open }"
+              @click="toggleSideNav"
+        >
+            <icon name="fa-close" :size="1.5" v-if="side_nav.is_open" />
+            <icon name="fa-bars" :size="1.5" v-else />
+        </span>
+
         <router-link to="/" class="navbar-brand mr-auto">
             <strong>Nav Brand</strong>
         </router-link>
@@ -47,11 +56,21 @@
 </template>
 
 <style lang="scss">
-    @import '../../scss/variables';
+    #side-nav-toggle {
+        transition: 0.9s;
 
+        &.menu-open {
+            transform: rotateY(180deg);
+        }
+
+        &.menu-closed {
+            transform: rotateY(-180deg);
+        }
+    }
 </style>
 
 <script>
+  import { mapState, mapActions } from 'vuex';
   import { Icon } from '../generic';
 
   export default {
@@ -68,6 +87,12 @@
           ]
         }
       }
+    },
+    computed: {
+      ...mapState('ui', ['side_nav']),
+    },
+    methods: {
+      ...mapActions('ui', ['toggleSideNav']),
     }
   }
 </script>
