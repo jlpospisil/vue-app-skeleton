@@ -210,6 +210,7 @@ export default {
     ...mapState('ui', ['side_nav']),
   },
   watch: {
+    /* eslint-disable-next-line func-names */
     'side_nav.is_open': function () {
       this.adjustTooltips();
 
