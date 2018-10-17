@@ -118,7 +118,7 @@
                     &.nav-link-dropdown-toggle {
                         &:after {
                             position: absolute;
-                            right: 1rem;
+                            right: 15px;
                             font-family: 'FontAwesome';
                             animation-name: fade-in;
                             animation-duration: $side-nav-animation-duration;
@@ -189,13 +189,14 @@
         .nav-item {
             transition: width $side-nav-animation-duration ease-in-out;
             white-space: nowrap;
-            overflow-x: hidden;
 
             .nav-link {
                 color: $side-nav-font-color;
                 border-top: 1px solid transparent;
                 border-bottom: 1px solid transparent;
                 padding: 5px 15px;
+                width: 100%;
+                overflow-x: hidden;
 
                 &:hover, &:focus {
                     color: lighten($side-nav-font-color, 10%);
