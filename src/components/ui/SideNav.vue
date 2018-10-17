@@ -93,7 +93,7 @@
 <style lang="scss" scoped>
     @import '../../scss/variables';
 
-    $border-color: darken($side-nav-bg-color, 15%);
+    $dark-bg-color: darken($side-nav-bg-color, 15%);
 
     .side-nav-bg {
         background-color: $side-nav-bg-color;
@@ -146,8 +146,7 @@
 
                 .nav-link {
                     &[aria-expanded="true"] {
-                        border-top-color: $border-color;
-                        border-bottom-color: $border-color;
+                        background-color: $dark-bg-color;
                     }
                 }
             }
@@ -163,24 +162,7 @@
                     left: $side-nav-width-collapsed;
 
                     .nav-item {
-                        border-right: 1px solid $border-color;
-
-                        &:first-child {
-                            border-top: 1px solid $border-color;
-
-                            .nav-link {
-                                border-top: none;
-                                border-bottom: none;
-                            }
-                        }
-
-                        &:not(:first-child) {
-                            border-left: 1px solid $border-color;
-                        }
-
-                        &:last-child {
-                            border-bottom: 1px solid $border-color;
-                        }
+                        background-color: $dark-bg-color;
                     }
                 }
             }
